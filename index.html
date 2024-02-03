@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Damage Calculator</title>
+</head>
+<body>
+    <center>
+        <button style="margin-top: 200px;" onclick="button_clicked()">Calculate Damage</button>
+    </center>
+</body>
+<script>
+    function button_clicked() {
+        var armor = prompt("How many armor points do you have?")
+        var armor_toughness = prompt("How many armor toughness points do you have?")
+        var damage = prompt("How much damage do you want to take?")
+
+        var armor = parseInt(armor)
+        var armor_toughness = parseInt(armor_toughness)
+        var damage = parseInt(damage)
+
+        var total_damage = damage * (1 - ((Math.max((armor / 5), armor - ((4 * damage) / (armor_toughness + 8)))) / 25))
+
+        alert("You will take " + total_damage + " damage.")
+    }
+</script>
+</html>
